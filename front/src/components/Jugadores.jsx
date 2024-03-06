@@ -5,7 +5,7 @@ import cuadroTCH from "../assets/img/cuadroTchouk.jpeg";
 function Jugadores() {
   const jugadores = [
     {
-      name: "Diaz Agustin",
+      name: "Diaz Agus",
       img: imgPrueba,
       infoPlayer: `Medio de cuadro de ferro`,
     },
