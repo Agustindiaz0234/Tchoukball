@@ -1,0 +1,39 @@
+.frame {
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background-color:white;
+    padding: 20px;
+    border: 1px solid grey;
+    z-index: 999;
+    display: flex; 
+    align-items: center; 
+    width: 90%;
+    height: 70%;
+    border-width: 10px;
+  }
+
+  .overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 998; 
+  }
+
+
+  .frame img{
+    width: 200px;
+    margin-left: auto;
+  }
+
+  .frame button{
+    width: auto;
+    height: auto;
+    font-size: 10px;
+    margin-top: auto;
+  }
+  

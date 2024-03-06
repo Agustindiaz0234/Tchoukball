@@ -1,0 +1,105 @@
+/* 
+.ferroTchoukImg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+} */
+
+/* .row {
+  display: flex; 
+  margin-top: 30px;
+} */
+
+/* .row1 {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-right: 100px;
+} */
+/* 
+.row button:first-child {
+  margin-left: auto; 
+} */
+/* 
+button{
+  display: flex;
+  align-items: center;
+}
+
+.row img{
+  width: 70px;
+  margin-right: 5px;
+  margin-left: 0px;
+}
+
+.row1 img{
+  width: 70px;
+  margin-right: 5px;
+  margin-left: 0px;
+}
+
+.row button{
+  margin-right: auto;
+}
+
+.row1 button{
+  margin-left: 70px;
+} */
+
+.home-button {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 226, 0.89); 
+  text-shadow: -2px 0px 0px rgba(102, 0, 185, 0.5);
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Bungee', sans-serif;
+  background-color: rgba(255, 255, 255, 0.75);
+} 
+
+.home-button img{
+
+  max-width: 100px;
+}
+/* .row button:hover {
+  color: skyblue; 
+  border: 1px solid skyblue;
+} */
+/* 
+
+.txtConImg {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 300px;
+
+}
+
+.txtConImg p,
+.txtConImg img {
+  width: auto; 
+  max-width: 50%;
+  background-color: white;
+ 
+}
+
+.txtConImg p {
+  margin-left: auto;
+  border: 0;
+  border-radius: 100px;
+  padding: 30px;
+}
+
+.txtConImg img {
+  margin-right: auto;
+  width: 11%;
+} */
