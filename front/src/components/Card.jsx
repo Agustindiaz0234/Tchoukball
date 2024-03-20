@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./card.css";
 import "./Frame.css";
 
-function Card({ name, img, infoPlayer }) {
+function Card({ id, name, img, infoPlayer }) {
   const [mostrarRecuadro, setMostrarRecuadro] = useState(false);
   const [informacion, setInformacion] = useState("");
 
@@ -20,7 +20,7 @@ function Card({ name, img, infoPlayer }) {
   return (
     <div className="container">
       <div className="image-container">
-        <img src={img} alt="Imagen jugador"></img>
+        <img src={`https://localhost:7033/${id}`} alt="Imagen jugador"></img>
         <div onClick={abrirRecuadro} className="overlay">
           <p className="message">{name}</p>
         </div>
