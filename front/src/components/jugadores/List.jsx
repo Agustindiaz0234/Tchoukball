@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function Formulario() {
+function JugadoresList() {
   const [jugadores, setJugadores] = useState([]);
   // eslint-disable-next-line no-undef
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -97,4 +97,4 @@ function Formulario() {
   );
 }
 
-export default Formulario;
+export default JugadoresList;

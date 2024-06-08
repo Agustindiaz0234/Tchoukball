@@ -1,4 +1,4 @@
-import pelotaTchouk from "../assets/img/pelotaTchouk.png";
+import pelotaTchouk from "../../assets/img/pelotaTchouk.png";
 
 function HomeButton({ link, label }) {
   return (

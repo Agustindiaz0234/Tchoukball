@@ -1,8 +1,8 @@
-import pelotaTchouk from "../assets/img/pelotaTchouk.png";
-import ferroTchouk from "../assets/img/ferropibes.jpeg";
+import ferroTchouk from "../../assets/img/ferropibes.jpeg";
 import HomeButton from "./HomeButton.jsx";
 import { Route, Routes } from "react-router-dom";
-import Formulario from "./Formulario.jsx";
+import JugadoresList from "../jugadores/List.jsx";
+import DetailJugadores from "../jugadores/Detail.jsx";
 
 function Home() {
   return (
@@ -23,7 +23,9 @@ function Home() {
             </div>
           }
         />
-        <Route path="/jugadores" element={<Formulario />} />
+        <Route path="/jugador/:modo" element={<DetailJugadores />} />
+        <Route path="/jugador/:modo/:id" element={<DetailJugadores />} />
+        <Route path="/jugadores" element={<JugadoresList />} />
       </Routes>
       <div className="container text-center">
         <div className="row">

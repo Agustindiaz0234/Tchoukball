@@ -1,14 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import ImageUploader from "./ImageUploader";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
-function EditarFormulario() {
+function DetailJugadores() {
   const { id } = useParams();
   const { modo } = useParams();
   const navigate = useNavigate();
@@ -92,6 +91,26 @@ function EditarFormulario() {
 
   return (
     <>
+      <div className="row g-3 align-items-center">
+        <div className="col-auto">
+          <label htmlFor="inputPassword6" className="col-form-label">
+            Password
+          </label>
+        </div>
+        <div className="col-auto">
+          <input
+            type="password"
+            id="inputPassword6"
+            className="form-control"
+            aria-describedby="passwordHelpInline"
+          ></input>
+        </div>
+        <div className="col-auto">
+          <span id="passwordHelpInline" className="form-text">
+            Must be 8-20 characters long.
+          </span>
+        </div>
+      </div>
       <form onSubmit={handleGuardar}>
         <div className="input-group mb-3">
           <span className="input-group-text">Nombre</span>
@@ -144,4 +163,4 @@ function EditarFormulario() {
   );
 }
 
-export default EditarFormulario;
+export default DetailJugadores;

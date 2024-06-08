@@ -6,7 +6,6 @@ function App1() {
   return (
     <Routes>
       <Route path="/jugador/:modo" element={<EditarFormulario />} />
-      <Route path="/" element={<Formulario />} />
       <Route path="/jugador/:modo/:id" element={<EditarFormulario />} />
     </Routes>
   );
