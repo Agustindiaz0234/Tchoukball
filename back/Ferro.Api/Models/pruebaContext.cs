@@ -17,6 +17,7 @@ namespace Ferro.Api.Models
         }
 
         public virtual DbSet<Jugadore> Jugadores { get; set; } = null!;
+        public virtual DbSet<Imagen> Imagenes { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -41,6 +42,13 @@ namespace Ferro.Api.Models
                     .HasColumnName("Fecha de nacimiento");
 
                 entity.Property(e => e.Nombre).HasMaxLength(45);
+            });
+
+            modelBuilder.Entity<Imagen>(entity =>
+            {
+                entity.ToTable("imagenes");
+                entity.HasKey(e => e.Id);
+
             });
 
             OnModelCreatingPartial(modelBuilder);

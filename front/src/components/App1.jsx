@@ -5,8 +5,9 @@ import EditarFormulario from "./EditarFormulario";
 function App1() {
   return (
     <Routes>
+      <Route path="/jugador/:modo" element={<EditarFormulario />} />
       <Route path="/" element={<Formulario />} />
-      <Route path="/editar/:id" element={<EditarFormulario />} />
+      <Route path="/jugador/:modo/:id" element={<EditarFormulario />} />
     </Routes>
   );
 }

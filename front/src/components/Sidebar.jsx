@@ -1,6 +1,7 @@
 import React from "react";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import "./SideNav.css";
+import { useNavigate } from "react-router-dom";
 
 import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 
@@ -14,7 +15,14 @@ class SideNavBar extends React.Component {
 
   render() {
     return (
-      <SideNav className="SideNavPrincipal" expanded={this.state.isVisible}>
+      <SideNav
+        className="SideNavPrincipal"
+        expanded={this.state.isVisible}
+        onSelect={(selected) => {
+          console.log(selected);
+          this.props.history.push(selected);
+        }}
+      >
         <SideNav.Toggle
           className="sidenav-toggle"
           onClick={() => {
@@ -28,41 +36,11 @@ class SideNavBar extends React.Component {
             </NavIcon>
             <NavText className="navText">Home</NavText>
           </NavItem>
-          <NavItem eventKey="placed orders">
+          <NavItem eventKey="jugadores">
             <NavIcon>
               <i className="bi bi-person-wheelchair"></i>
             </NavIcon>
             <NavText>Jugadores</NavText>
-          </NavItem>
-          <NavItem eventKey="Redes">
-            <NavIcon>
-              <i className="bi bi-chat-text"></i>
-            </NavIcon>
-            <NavText>Redes</NavText>
-          </NavItem>
-          <NavItem eventKey="Sponsors">
-            <NavIcon>
-              <i className="bi bi-handbag"></i>
-            </NavIcon>
-            <NavText>Sponsors</NavText>
-          </NavItem>
-          <NavItem eventKey="Fixture">
-            <NavIcon>
-              <i className="bi bi-calendar"></i>
-            </NavIcon>
-            <NavText>Fixture</NavText>
-          </NavItem>
-          <NavItem eventKey="Fotos">
-            <NavIcon>
-              <i className="bi bi-camera"></i>
-            </NavIcon>
-            <NavText>Fotos</NavText>
-          </NavItem>
-          <NavItem eventKey="Colaboraciones">
-            <NavIcon>
-              <i className="bi bi-gift"></i>
-            </NavIcon>
-            <NavText>Colaboracion</NavText>
           </NavItem>
         </SideNav.Nav>
       </SideNav>

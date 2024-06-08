@@ -1,5 +1,6 @@
 ﻿using Ferro.Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -53,6 +54,16 @@ namespace Ferro.Api.Controllers
             var jugadorActual = this.Context.Jugadores.Where(e=> e.Id== id).FirstOrDefault();
             jugadorActual.Nombre = value.Nombre;
             jugadorActual.FechaDeNacimiento = value.FechaDeNacimiento;
+            if (jugadorActual.IdImagen != value.IdImagen)
+            {
+                var imgVieja = Context.Imagenes.FirstOrDefault(e => e.Id == jugadorActual.IdImagen);
+                if (imgVieja != null) {
+                    Context.Imagenes.Remove(imgVieja);
+
+                }
+                
+            }
+            jugadorActual.IdImagen= value.IdImagen;
             this.Context.SaveChanges();
         }
 
@@ -61,7 +72,9 @@ namespace Ferro.Api.Controllers
         public void Delete(int id)
         {
             var jugadorActual = this.Context.Jugadores.Where(e => e.Id == id).FirstOrDefault();
+            var imgJugador = this.Context.Imagenes.Where(e => e.Id == jugadorActual.IdImagen).FirstOrDefault();
             this.Context.Jugadores.Remove(jugadorActual);
+            this.Context.Imagenes.Remove(imgJugador);
             this.Context.SaveChanges();
         }
     }

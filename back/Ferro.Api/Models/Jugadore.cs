@@ -9,7 +9,7 @@ namespace Ferro.Api.Models
         public string? Nombre { get; set; }
         public DateTime? FechaDeNacimiento { get; set; }
 
-        public string? Imagen { get; set; }
+        public Guid? IdImagen { get; set; }
         public double? Edad
         {
             get
