@@ -18,11 +18,9 @@ function DetailJugadores() {
     edad: 0,
     idImagen: null,
   });
-
+  const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {
     if (modo == "agregar") return;
-
-    const apiUrl = import.meta.env.VITE_API_URL;
 
     axios
       .get(`${apiUrl}/api/Jugadores/${id}`)
@@ -40,7 +38,7 @@ function DetailJugadores() {
       formData.append("file", file);
 
       axios
-        .post(`${apiURl}/api/Imagen/upload`, formData, {
+        .post("https://localhost:7033/api/Imagen/upload", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -64,7 +62,7 @@ function DetailJugadores() {
 
     if (modo == "agregar") {
       axios
-        .post(`${apiURl}/api/Jugadores`, jugador)
+        .post("https://localhost:7033/api/Jugadores", jugador)
         .then((response) => {
           alert("Jugador agregado", response.data);
           navigate("/");
@@ -76,7 +74,7 @@ function DetailJugadores() {
 
     if (modo == "editar") {
       axios
-        .put(`${apiURl}/api/Jugadores/${id}`, jugador)
+        .put(`https://localhost:7033/api/Jugadores/${id}`, jugador)
         .then((response) => {
           alert("Se han actualizado los datos del jugador", response.data);
           navigate("/");
