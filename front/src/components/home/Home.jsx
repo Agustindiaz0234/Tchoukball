@@ -19,6 +19,7 @@ function Home() {
                 className="ferroTchoukImg"
                 src={ferroTchouk}
                 alt="Foto del grupo"
+                style={{ width: "50%" }}
               ></img>
             </div>
           }

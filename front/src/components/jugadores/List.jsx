@@ -22,7 +22,7 @@ function JugadoresList() {
   const handleDelete = (e, id) => {
     e.preventDefault();
     axios
-      .delete(`https://localhost:7033/api/Jugadores/${id}`)
+      .delete(`${apiUrl}/api/Jugadores/${id}`)
       .then((response) => {
         console.log("Se a eliminado al usuario con el id", id, response);
         location.reload();
@@ -64,7 +64,7 @@ function JugadoresList() {
                     <td>{jugador.edad}</td>
                     <td>
                       <img
-                        src={`https://localhost:7033/api/Imagen/${jugador.idImagen}`}
+                        src={`${apiUrl}/api/Imagen/${jugador.idImagen}`}
                         alt="Player"
                         style={{ maxWidth: "50px" }}
                       />
