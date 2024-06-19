@@ -11,14 +11,14 @@ function DetailJugadores() {
   const { id } = useParams();
   const { modo } = useParams();
   const navigate = useNavigate();
-
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [jugador, setJugador] = useState({
     nombre: "",
     fechaDeNacimiento: "",
     edad: 0,
     idImagen: null,
   });
-  const apiUrl = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     if (modo == "agregar") return;
 

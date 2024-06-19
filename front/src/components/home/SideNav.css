@@ -1,12 +1,4 @@
-.SideNavPrincipal{
-    background-color: rgb(2 58 115);
+@import "rsuite/dist/rsuite.css";
 
-}
+#root{ padding: 10px; }
 
-.sidenav-toggle{
-    display: block;
-}
-
-.navText{
-   color: black;
-}
