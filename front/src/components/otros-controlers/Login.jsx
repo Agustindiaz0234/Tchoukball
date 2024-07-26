@@ -6,7 +6,6 @@ function Login() {
         <input />
         <label>Contraseña:</label>
         <input type="password" />
-        <
       </form>
     </>
   );
