@@ -38,7 +38,7 @@ function DetailJugadores() {
       formData.append("file", file);
 
       axios
-        .post("https://localhost:7033/api/Imagen/upload", formData, {
+        .post(`${apiUrl}/api/Imagen/upload`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -62,7 +62,7 @@ function DetailJugadores() {
 
     if (modo == "agregar") {
       axios
-        .post("https://localhost:7033/api/Jugadores", jugador)
+        .post(`${apiUrl}/api/Jugadores`, jugador)
         .then((response) => {
           alert("Jugador agregado", response.data);
           navigate("/");
@@ -74,7 +74,7 @@ function DetailJugadores() {
 
     if (modo == "editar") {
       axios
-        .put(`https://localhost:7033/api/Jugadores/${id}`, jugador)
+        .put(`${apiUrl}/api/Jugadores/${id}`, jugador)
         .then((response) => {
           alert("Se han actualizado los datos del jugador", response.data);
           navigate("/");
@@ -145,7 +145,7 @@ function DetailJugadores() {
           {jugador.idImagen !== null && (
             <>
               <img
-                src={`https://localhost:7033/api/Imagen/${jugador.idImagen}`}
+                src={`${apiUrl}/api/Imagen/${jugador.idImagen}`}
                 alt="Player"
                 style={{ maxWidth: "100px", maxHeight: "100px" }}
               />
