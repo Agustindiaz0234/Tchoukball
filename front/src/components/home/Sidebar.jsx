@@ -1,21 +1,30 @@
-import { Sidenav, Nav, Toggle } from "rsuite";
+import { Sidenav, Nav } from "rsuite";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import DashboardIcon from "@rsuite/icons/legacy/Dashboard";
 import GroupIcon from "@rsuite/icons/legacy/Group";
 import "./SideNav.css";
+import { Justify } from "react-bootstrap-icons";
 
 function SideBar() {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [activeKey, setActiveKey] = useState();
 
+  const cambioToggle = () => {
+    setExpanded(!expanded);
+  };
+
   return (
-    <div style={{ width: 240 }}>
-      <Toggle
-        onChange={setExpanded}
-        checked={expanded}
-        icon={<DashboardIcon />}
-      />
+    <div style={{ width: expanded ? 300 : 60 }}>
+      <button onClick={cambioToggle} style={{ background: "#f7f7fa" }}>
+        <Justify
+          style={{
+            width: expanded ? 290 : 45,
+            color: expanded ? "#1675e0" : "inherit",
+            transition: "width 0.25s, color 0.5s",
+          }}
+        />
+      </button>
       <Sidenav expanded={expanded} defaultOpenKeys={["3", "4"]}>
         <Sidenav.Body>
           <Nav activeKey={activeKey} onSelect={setActiveKey}>

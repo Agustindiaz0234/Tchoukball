@@ -24,8 +24,7 @@ function Home() {
             </div>
           }
         />
-        <Route path="/jugador/:modo" element={<DetailJugadores />} />
-        <Route path="/jugador/:modo/:id" element={<DetailJugadores />} />
+
         <Route path="/jugadores" element={<JugadoresList />} />
       </Routes>
       <div className="container text-center">
