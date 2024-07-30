@@ -32,7 +32,7 @@ namespace Ferro.Api.Controllers
             return Context.Jugadores.ToList();
         }
 
-        // GET id api/<JugadoresController>/5
+        // GET api/<JugadoresController>/5
         [HttpGet("{id}")]
         public Jugadore? Get(int id)
         {

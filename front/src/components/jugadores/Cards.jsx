@@ -23,11 +23,6 @@ function Cards() {
           img={jugadores.idImagen}
         />
       ))}
-      <div>
-        <a href="/jugador/agregar" className="btn btn-primary">
-          Agregar
-        </a>
-      </div>
     </>
   );
 }

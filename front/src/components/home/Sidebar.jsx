@@ -5,6 +5,7 @@ import DashboardIcon from "@rsuite/icons/legacy/Dashboard";
 import GroupIcon from "@rsuite/icons/legacy/Group";
 import "./SideNav.css";
 import { Justify } from "react-bootstrap-icons";
+import userService from "../../services/userService";
 
 function SideBar() {
   const [expanded, setExpanded] = useState(false);
@@ -12,6 +13,11 @@ function SideBar() {
 
   const cambioToggle = () => {
     setExpanded(!expanded);
+  };
+
+  const logout = () => {
+    userService.logout();
+    window.location.reload();
   };
 
   return (
@@ -38,6 +44,9 @@ function SideBar() {
               to="/jugadores"
             >
               Jugadores
+            </Nav.Item>
+            <Nav.Item eventKey="3" icon={<GroupIcon />} onClick={logout}>
+              logout
             </Nav.Item>
           </Nav>
         </Sidenav.Body>
