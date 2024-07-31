@@ -1,8 +1,5 @@
 import ferroTchouk from "../../assets/img/ferropibes.jpeg";
 import HomeButton from "./HomeButton.jsx";
-import { Route, Routes } from "react-router-dom";
-import JugadoresList from "../jugadores/List.jsx";
-import DetailJugadores from "../jugadores/Detail.jsx";
 
 function Home() {
   return (
@@ -10,23 +7,14 @@ function Home() {
       <div>
         <h1>Titulo</h1>
       </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="row mt-3">
-              <img
-                className="ferroTchoukImg"
-                src={ferroTchouk}
-                alt="Foto del grupo"
-                style={{ width: "50%" }}
-              ></img>
-            </div>
-          }
-        />
-
-        <Route path="/jugadores" element={<JugadoresList />} />
-      </Routes>
+      <div className="row mt-3">
+        <img
+          className="ferroTchoukImg"
+          src={ferroTchouk}
+          alt="Foto del grupo"
+          style={{ width: "50%" }}
+        ></img>
+      </div>
       <div className="container text-center">
         <div className="row">
           <div className="col">

@@ -17,7 +17,7 @@ function SideBar() {
 
   const logout = () => {
     userService.logout();
-    window.location.reload();
+    location.reload();
   };
 
   return (

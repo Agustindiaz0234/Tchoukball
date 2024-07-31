@@ -6,6 +6,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
+import jugadoresService from "../../services/jugadoresService";
 
 function DetailJugadores() {
   const { id } = useParams();
@@ -22,14 +23,9 @@ function DetailJugadores() {
   useEffect(() => {
     if (modo == "agregar") return;
 
-    axios
-      .get(`${apiUrl}/api/Jugadores/${id}`)
-      .then((response) => {
-        setJugador(response.data);
-      })
-      .catch((error) => {
-        console.log("error al recuperar los datos del jugador", error);
-      });
+    jugadoresService.getId(id).then((data) => {
+      setJugador(data);
+    });
   }, [id, modo]);
 
   const handleImageSelected = async (file) => {
@@ -61,27 +57,13 @@ function DetailJugadores() {
     e.preventDefault();
 
     if (modo == "agregar") {
-      axios
-        .post(`${apiUrl}/api/Jugadores`, jugador)
-        .then((response) => {
-          alert("Jugador agregado", response.data);
-          navigate("/");
-        })
-        .catch((error) => {
-          alert("error al agregar jugador", error);
-        });
+      jugadoresService.add(jugador);
+      navigate("/");
     }
 
     if (modo == "editar") {
-      axios
-        .put(`${apiUrl}/api/Jugadores/${id}`, jugador)
-        .then((response) => {
-          alert("Se han actualizado los datos del jugador", response.data);
-          navigate("/");
-        })
-        .catch((error) => {
-          console.log("No se pudieron guardar los datos del jugador", error);
-        });
+      jugadoresService.edit(jugador, id);
+      navigate("/");
     }
   };
 

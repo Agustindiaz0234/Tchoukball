@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import jugadoresService from "../../services/jugadoresService";
 
 function JugadoresList() {
   const [jugadores, setJugadores] = useState([]);
@@ -7,29 +7,15 @@ function JugadoresList() {
   const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    axios
-      .get(`${apiUrl}/api/Jugadores`)
-      .then((response) => {
-        // Maneja la respuesta de la API aquí
-        setJugadores(response.data);
-      })
-      .catch((error) => {
-        // Maneja los errores aquí
-        console.error("Error al recuperar datos de la API:", error);
-      });
+    jugadoresService.list().then((data) => {
+      setJugadores(data);
+    });
   }, []);
 
   const handleDelete = (e, id) => {
     e.preventDefault();
-    axios
-      .delete(`${apiUrl}/api/Jugadores/${id}`)
-      .then((response) => {
-        console.log("Se a eliminado al usuario con el id", id, response);
-        location.reload();
-      })
-      .catch((error) => {
-        console.log("Error al eliminar usuario", error);
-      });
+    jugadoresService.delete(id);
+    location.reload();
   };
 
   return (
