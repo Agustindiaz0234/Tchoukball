@@ -53,26 +53,35 @@ namespace Ferro.Api.Controllers
         [Route("upload")]
         public async Task<IActionResult> UploadImage([FromForm] ImageUploadRequest request)
         {
-            if (request.File == null || request.File.Length == 0)
+            try
             {
-                return BadRequest("No file uploaded.");
-            }
-
-            using (var memoryStream = new MemoryStream())
-            {
-                await request.File.CopyToAsync(memoryStream);
-
-                var image = new Imagen
+                if (request.File == null || request.File.Length == 0)
                 {
-                    Id = Guid.NewGuid(),
-                    Name = request.File.FileName,
-                    Data = memoryStream.ToArray()
-                };
+                    return BadRequest("No file uploaded.");
+                }
 
-                Context.Imagenes.Add(image);
-                await Context.SaveChangesAsync();
+                using (var memoryStream = new MemoryStream())
+                {
+                    await request.File.CopyToAsync(memoryStream);
 
-                return Ok(new { Id = image.Id });
+                    var image = new Imagen
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = request.File.FileName,
+                        Data = memoryStream.ToArray()
+                    };
+
+                    Context.Imagenes.Add(image);
+                    await Context.SaveChangesAsync();
+
+                    return Ok(new { Id = image.Id });
+                }
+            }
+            catch (Exception ex)
+            {
+                // Registra el error
+                Console.WriteLine($"Error uploading image: {ex.Message}");
+                return StatusCode(500, "An error occurred while processing your request.");
             }
         }
 

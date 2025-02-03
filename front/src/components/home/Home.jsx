@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <div>
-        <h1>Titulo</h1>
+        <h1>Tchoukball Ferro</h1>
       </div>
       <div className="row mt-3">
         <img

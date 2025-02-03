@@ -21,6 +21,8 @@ namespace Ferro.Api.Models
 
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
+        public virtual DbSet<Sponsor> Sponsors { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -59,6 +61,14 @@ namespace Ferro.Api.Models
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Nombre).HasMaxLength(45);
                 entity.Property(e => e.Password).HasMaxLength(45);
+            });
+
+            modelBuilder.Entity<Sponsor>(entity =>
+            {
+                entity.ToTable("sponsors");
+                entity.HasKey(e => e.Id);
+                entity.Property(e=>e.Nombre);
+                entity.Property(e => e.RedSocial);
             });
 
             OnModelCreatingPartial(modelBuilder);

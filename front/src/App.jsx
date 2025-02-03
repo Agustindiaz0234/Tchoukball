@@ -10,6 +10,7 @@ import DetailJugadores from "./components/jugadores/Detail.jsx";
 import Login from "./components/otros-controlers/Login.jsx";
 import AuthRoute from "./components/AuthRoute.jsx";
 import Cards from "./components/jugadores/Cards.jsx";
+import Nota from "./components/notas/nota.jsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           path="/jugadores"
           element={<AuthRoute element={JugadoresList} fallback={Cards} />}
         />
+        <Route path="/notas" element={<Nota />} />
         <Route path="/jugador/:modo" element={<DetailJugadores />} />
         <Route path="/jugador/:modo/:id" element={<DetailJugadores />} />
       </Routes>

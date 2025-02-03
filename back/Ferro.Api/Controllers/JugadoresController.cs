@@ -74,7 +74,9 @@ namespace Ferro.Api.Controllers
             var jugadorActual = this.Context.Jugadores.Where(e => e.Id == id).FirstOrDefault();
             var imgJugador = this.Context.Imagenes.Where(e => e.Id == jugadorActual.IdImagen).FirstOrDefault();
             this.Context.Jugadores.Remove(jugadorActual);
-            this.Context.Imagenes.Remove(imgJugador);
+            if (imgJugador!=null) {
+                this.Context.Imagenes.Remove(imgJugador);
+            }
             this.Context.SaveChanges();
         }
     }

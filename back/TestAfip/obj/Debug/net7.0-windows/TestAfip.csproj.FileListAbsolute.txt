@@ -1,0 +1,7 @@
+C:\Users\diaza\Desktop\Proyectos-react\ferro\back\TestAfip\obj\Debug\net7.0-windows\TestAfip.csproj.AssemblyReference.cache
+C:\Users\diaza\Desktop\Proyectos-react\ferro\back\TestAfip\obj\Debug\net7.0-windows\TestAfip.Form1.resources
+C:\Users\diaza\Desktop\Proyectos-react\ferro\back\TestAfip\obj\Debug\net7.0-windows\TestAfip.csproj.GenerateResource.cache
+C:\Users\diaza\Desktop\Proyectos-react\ferro\back\TestAfip\obj\Debug\net7.0-windows\TestAfip.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diaza\Desktop\Proyectos-react\ferro\back\TestAfip\obj\Debug\net7.0-windows\TestAfip.AssemblyInfoInputs.cache
+C:\Users\diaza\Desktop\Proyectos-react\ferro\back\TestAfip\obj\Debug\net7.0-windows\TestAfip.AssemblyInfo.cs
+C:\Users\diaza\Desktop\Proyectos-react\ferro\back\TestAfip\obj\Debug\net7.0-windows\TestAfip.csproj.CoreCompileInputs.cache

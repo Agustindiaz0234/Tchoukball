@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import DashboardIcon from "@rsuite/icons/legacy/Dashboard";
 import GroupIcon from "@rsuite/icons/legacy/Group";
+import IOsIcon from "@rsuite/icons/IOs";
 import "./SideNav.css";
 import { Justify } from "react-bootstrap-icons";
 import userService from "../../services/userService";
@@ -31,7 +32,7 @@ function SideBar() {
           }}
         />
       </button>
-      <Sidenav expanded={expanded} defaultOpenKeys={["3", "4"]}>
+      <Sidenav expanded={expanded} defaultOpenKeys={["3", "5"]}>
         <Sidenav.Body>
           <Nav activeKey={activeKey} onSelect={setActiveKey}>
             <Nav.Item eventKey="1" icon={<DashboardIcon />} as={NavLink} to="/">
@@ -44,6 +45,12 @@ function SideBar() {
               to="/jugadores"
             >
               Jugadores
+            </Nav.Item>
+            <Nav.Item eventKey="2" icon={<IOsIcon />} as={NavLink} to="/notas">
+              login
+            </Nav.Item>
+            <Nav.Item eventKey="2" icon={<IOsIcon />} as={NavLink} to="/login">
+              login
             </Nav.Item>
             <Nav.Item eventKey="3" icon={<GroupIcon />} onClick={logout}>
               logout
